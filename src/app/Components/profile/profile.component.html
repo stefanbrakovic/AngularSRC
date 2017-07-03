@@ -1,0 +1,94 @@
+<section class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse" id="ext_menu-0">
+  <div class="mbr-navbar__section mbr-section">
+    <div class="mbr-section__container container">
+      <div class="mbr-navbar__container">
+        <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand">
+                    <span class="mbr-navbar__brand-link mbr-brand mbr-brand--inline">
+                        <span class="mbr-brand__logo"><a href="https://www.google.rs/url?sa=i&amp;rct=j&amp;q=&amp;esrc=s&amp;source=images&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwj34t6ctsfUAhXC0hoKHcESBl0QjRwIBw&amp;url=https%3A%2F%2Fwww.pinterest.com%2Fexplore%2Fgym-logo%2F&amp;psig=AFQjCNEEmg92ZbzEMObQQi0Ex6eZSi0niQ&amp;ust=1497876301788969"><img src="../../../assets/images/nfc-logo-128x128.png" class="mbr-navbar__brand-img mbr-brand__img" alt="Mobirise"></a></span>
+                        <span class="mbr-brand__name"><a class="mbr-brand__name text-white" href="https://mobirise.com">TERETANA TIM</a></span>
+                    </span>
+        </div>
+        <div class="mbr-navbar__hamburger mbr-hamburger"><span class="mbr-hamburger__line"></span></div>
+        <div class="mbr-navbar__column mbr-navbar__menu">
+          <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
+            <div class="mbr-navbar__column">
+              <ul class="mbr-navbar__items mbr-navbar__items--right float-left mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links">
+                <li class="mbr-navbar__item">
+                  <a class="mbr-buttons__link btn text-white" href="index.html">HOME</a>
+                </li>
+                <li class="mbr-navbar__item">
+                  <a class="mbr-buttons__link btn text-white" routerLink="/about" routerLinkActive="active">ABOUT</a>
+                </li>
+                <li class="mbr-navbar__item">
+                  <a class="mbr-buttons__link btn text-white" routerLink="/viewServices" routerLinkActive="active">VIEW SERVICES<br><br></a>
+                </li>
+                <li class="mbr-navbar__item">
+                  <a class="mbr-buttons__link btn text-white" routerLink="/contact" routerLinkActive="active">CONTACT</a>
+                </li>
+                <li class="mbr-navbar__item">
+                  <a class="mbr-buttons__link btn text-white" routerLink="/" routerLinkActive="active">LOGOUT<br><br></a>
+                </li>
+              </ul>
+
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mbr-section mbr-section--relative mbr-parallax-background" id="msg-box5-a" style="background-image: url(../../../assets/images/mbr-1-2000x1328.jpg);height: inherit;">
+  <br><br><br><br><br><br><br>
+
+  <div class="panel panel-primary" style="width: 50%">
+    <div class="panel-heading">
+      User profile
+    </div>
+    <form class="userForm">
+        <table class="table table-primary">
+        <tbody>
+        <tr>
+          <td>
+            <label>Name:</label>
+          </td>
+
+          <td>
+            <input class="userForm" type="text" name="firstName" value="{{curentUser.firstName}}">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Surname:</label>
+          </td>
+
+          <td>
+            <input class="userForm" type="text" name="lastName"  value="{{curentUser.lastName}}">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>Card number:</label>
+          </td>
+
+          <td>
+            <input class="userForm" type="text" name="cardNumber"  value="{{curentUser.cardNumber}}">
+          </td>
+        </tr>
+        <!--<tr>
+          <td>
+            <input class="userForm" type="submit" value="Add">
+          </td>
+      </tr>-->
+        </tbody>
+        <!--<tr *ngFor="let user of Users">
+       <td>{{user.firstName}}</td>
+       <td>{{user.lastName}}</td>
+       <td>{{user.cardNumber}}</td>
+     <tr>-->
+
+      </table>
+    </form>
+  </div>
+
+</section>

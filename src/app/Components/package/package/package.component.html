@@ -1,0 +1,28 @@
+<p>
+  package works!
+</p>
+
+<form class="container" [formGroup]="packageForm" (ngSubmit) = "createNewPackage(packageForm.value)">
+
+  <input type="text" name="packageName" placeholder="packageName"  formControlName="packageName">
+  <br>
+  <input type="text" name="packageDescription" placeholder="packageDescription"
+         formControlName="packageDescription">
+  <br>
+  <select name="isActive" formControlName="isActive">
+    <option value="true">True</option>
+    <option value="false">False</option>
+  </select>
+  <br>
+  <input type="date" name="dateCreated" placeholder="dateCreated"  formControlName="dateCreated">
+  <br>
+
+  <input type="submit" value="Submit">
+</form>
+
+<button (click)="getAllPackages()">Test get all packages</button><br>
+<ul *ngFor="let _package  of packages">
+  <li>{{_package.packageId}} , {{_package.packageName}}, {{_package.packageDescription}},
+    </li>
+</ul>
+

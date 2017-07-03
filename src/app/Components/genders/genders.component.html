@@ -1,0 +1,16 @@
+<p>
+  genders works!
+</p>
+<form class="container" [formGroup]="gendersForm" (ngSubmit) = "createNewGender(gendersForm.value)">
+
+  <input type="text" name="genderName" placeholder="genderName"  formControlName="genderName">
+  <br>
+
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+<button (click)="getAllGenders()">Test get all genders</button><br>
+<ul *ngFor="let gender of genders">
+  <li>{{gender.genderId}} , {{gender.gender}}</li>
+</ul>

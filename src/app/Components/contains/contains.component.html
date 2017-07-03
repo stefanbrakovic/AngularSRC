@@ -1,0 +1,69 @@
+<br><br><br><br>
+<p>
+  contains works!
+</p>
+
+<form class="container" [formGroup]="containsForm" (ngSubmit) = "createNewContains(containsForm.value)">
+
+  <input type="date" name="dateAdded" placeholder="dateAdded"  formControlName="dateAdded">
+  <br>
+  <input type="number" min="0" max="100" name="discount" placeholder="discount"
+         formControlName="discount">
+  <br>
+  <ul  *ngFor ="let service of services" >
+    <li> <input formControlName="serviceId" name = "services" type="checkbox" value="{{service.serviceId}}" [checked]="service.checked" (change)="onChange(service)" > {{service.serviceName}}</li>
+  </ul>
+  <br>
+
+  <select  formControlName="packageId">
+    <option *ngFor ="let _package of packages"  value="{{_package.packageId}}">{{_package.packageName}}</option>
+
+  </select>
+
+  <!--<input class="userForm" type="button" value="Add" (click)="addService()">-->
+  <br>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+
+<!--<div class="panel panel-primary" style="width: 50%">-->
+  <!--<div class="panel-heading">-->
+    <!--Make new package-->
+  <!--</div>-->
+  <!--<table class="table table-primary">-->
+    <!--<tr>-->
+      <!--<td>-->
+        <!--<input class="userForm" type="text" [(ngModel)]="packageName">-->
+      <!--</td>-->
+
+      <!--<td>-->
+        <!--<input class="userForm" type="button" value="Make package" (click)="makePackage()">-->
+      <!--</td>-->
+    <!--</tr>-->
+    <!--&lt;!&ndash;<input class="userForm" type="text" [(ngModel)]="packageName"> <input class="userForm" type="button" value="Make package" (click)="makePackage()">-->
+    <!--</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<form class="userForm" [formGroup] = "form2" (ngSubmit) = "onSubmit2(form2.value)">&ndash;&gt;-->
+
+    <!--<tr *ngFor="let user of Users">-->
+      <!--<td>-->
+        <!--{{user.firstName}} {{user.lastName}}-->
+        <!--&lt;!&ndash;<input class="userForm" type="button" value="Add" (click)="addUser(user)">   &ndash;&gt;-->
+      <!--</td>-->
+      <!--<td>-->
+        <!--<input type="checkbox" value="{{user.cardNumber}}" [checked]="user.checked" (change)="onChange(user)">-->
+      <!--</td>-->
+    <!--</tr>-->
+    <!--&lt;!&ndash;<input class="userForm" type="submit" value="Add">     &ndash;&gt;-->
+
+    <!--&lt;!&ndash;</form>&ndash;&gt;-->
+  <!--</table>-->
+<!--</div>-->
+
+<!--<button (click)="getAllServices()">Test get all services</button><br>-->
+<!--<ul *ngFor="let service of services">-->
+  <!--<li>{{service.serviceId}} , {{service.serviceName}}, {{service.serviceDescription}},-->
+  <!--{{service.servicePrice}}</li>-->
+<!--</ul>-->
+

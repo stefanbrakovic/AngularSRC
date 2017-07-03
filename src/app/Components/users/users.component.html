@@ -1,0 +1,231 @@
+<app-navbar></app-navbar>
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="features1-9" style="background-color: rgb(193, 193, 193); height: inherit;">
+<br><br><br><br>
+  <!--<div class="panel panel-primary" style="width: 50%">-->
+  <!--<div class="container" style="margin-left: 20%; width: 30%">-->
+
+  <div class="container">
+    <h2>
+      REGISTER
+    </h2>
+    <form [formGroup]="form" (ngSubmit) = "createNewUser(form.value)">
+      <div class="form-group">
+              <label>Fist name:</label>
+              <input type="text" #refName class="form-control" name="firstName" placeholder="firstName"  formControlName="firstName">
+              <!--<b>{{refName.className}}</b>-->
+              <div *ngIf="form.controls['firstName'].hasError('required') &&  form.controls['firstName'].touched" class="alert">            
+                  Please enter a name             
+              </div>
+      </div>
+      <div class="form-group">
+              <label>Last name:</label>
+              <input type="text" class="form-control" name="lastName" placeholder="lastName"  formControlName="lastName">
+              <div *ngIf="form.controls['lastName'].hasError('required') &&  form.controls['lastName'].touched" class="alert">            
+                  Please enter a surname             
+              </div>
+      </div>
+       <div class="form-group">
+               <label>Telephone:</label>
+              <input type="text" class="form-control" name="telephone" placeholder="telephone"  formControlName="telephone">
+              <div *ngIf="form.controls['telephone'].hasError('required') &&  form.controls['telephone'].touched" class="alert">            
+                  Please enter a telephone             
+               </div>
+      </div> 
+      <div class="form-group">
+               <label>Card number:</label>
+               <input type="text" class="form-control" name="cardNumber" placeholder="cardNumber"  formControlName="cardNumber">
+               <div *ngIf="form.controls['cardNumber'].hasError('required') &&  form.controls['cardNumber'].touched" class="alert">            
+                  Please enter a card number             
+               </div>
+      </div> 
+       <div class="form-group">
+               <label>Mail:</label>
+               <input type="text" class="form-control" name="mail" placeholder="mail"  formControlName="mail">
+               <div *ngIf="form.controls['mail'].hasError('pattern')" class="alert">            
+                  Please enter a valid email!           
+              </div>
+              <div *ngIf="form.controls['mail'].hasError('required') && form.controls['mail'].touched" class="alert">            
+                  Please enter a email!           
+              </div>
+      </div> 
+       <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" name="userPassword" placeholder="userPassword"  formControlName="userPassword">
+                <div *ngIf="form.controls['userPassword'].hasError('required') &&  form.controls['userPassword'].touched" class="alert">            
+                  Please enter a password            
+               </div>
+      </div> 
+       <div class="form-group">
+                 <label>User type:</label>
+                 <select type="radio" class="form-control"  name="userType" placeholder="userType"  formControlName="userType">
+                      <option value="1">Employee</option>
+                      <option value="2">Regular</option>
+                  </select>
+                  <div *ngIf="form.controls['userType'].hasError('required') &&  form.controls['userType'].touched" class="alert">            
+                    Please select a user type          
+                  </div>
+      </div> 
+       <div class="form-group">
+                <label>Gender:</label>
+                <select type="radio" class="form-control" name="genderId" placeholder="genderId"  formControlName="genderId">
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                </select>
+                <div *ngIf="form.controls['genderId'].hasError('required') &&  form.controls['genderId'].touched" class="alert">            
+                    Please select a gender          
+                </div>
+      </div> 
+      <div class="form-group">
+              <label>Date of Birth:</label>
+              <input type="date" class="form-control" name="dateOfBirth" placeholder="dateOfBirth" formControlName="dateOfBirth">
+              <div *ngIf="form.controls['dateOfBirth'].hasError('required') &&  form.controls['dateOfBirth'].touched" class="alert">            
+                    Please enter a date of birth          
+              </div>
+      </div> 
+      <div class="form-group">
+               <label>City:</label>
+               <input type="text" class="form-control" name="city" placeholder="city"  formControlName="city">
+                <div *ngIf="form.controls['city'].hasError('required') &&  form.controls['city'].touched" class="alert">            
+                    Please enter a city         
+                </div>
+      </div> 
+      <div class="form-group">
+               <label>Street:</label>
+               <input type="text" class="form-control" name="street" placeholder="street"  formControlName="street">
+                <div *ngIf="form.controls['street'].hasError('required') &&  form.controls['street'].touched" class="alert">            
+                    Please enter a street          
+                </div>  
+      </div>
+       <div class="form-group">
+              <label>Street number:</label>
+               <input type="text" class="form-control" name="streetNumber" placeholder="streetNumber"  formControlName="streetNumber">
+                <div *ngIf="form.controls['streetNumber'].hasError('required') &&  form.controls['streetNumber'].touched" class="alert">            
+                    Please enter a street number          
+                </div>
+      </div>
+       <div class="form-group" style="margin-left: 12em">
+              <input type="submit" [disabled]="!form.valid" value="Register" style="margin-bottom: 10px">
+              <a routerLink="/login" class="btn btn-link">Login</a>
+        </div>
+      <!--<table class="table table-primary">
+        <tbody>
+                <tr>
+                  <td>
+                    <label>Fist name:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="firstName" placeholder="firstName"  formControlName="firstName">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Last name:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="lastName" placeholder="lastName"  formControlName="lastName">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Telephone:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="telephone" placeholder="telephone"  formControlName="telephone">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Card number:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="cardNumber" placeholder="cardNumber"  formControlName="cardNumber">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Mail:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="mail" placeholder="mail"  formControlName="mail">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Password:</label>
+                  </td>
+                  <td align="center">
+                    <input type="password" name="userPassword" placeholder="userPassword"  formControlName="userPassword">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <label>User type:</label>
+                  </td>
+                  <td align="center">
+                    <select type="radio"  name="userType" placeholder="userType"  formControlName="userType">
+                      <option value="1">Employee</option>
+                      <option value="2">Regular</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Gender:</label>
+                  </td>
+                  <td align="center">
+                    <select type="radio"  name="genderId" placeholder="genderId"  formControlName="genderId">
+                      <option value="1">Male</option>
+                      <option value="2">Female</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Date of Birth:</label>
+                  </td>
+                  <td align="center">
+                    <input type="date" name="dateOfBirth" placeholder="dateOfBirth" formControlName="dateOfBirth">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>City:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="city" placeholder="city"  formControlName="city">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Street:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="street" placeholder="street"  formControlName="street">
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label>Street number:</label>
+                  </td>
+                  <td align="center">
+                    <input type="text" name="streetNumber" placeholder="streetNumber"  formControlName="streetNumber">
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    <input type="submit" value="Register">
+                  </td>
+                  <td align="center">
+                    <a routerLink="/login" class="btn btn-link">Login</a>
+                  </td>
+                </tr>
+        </tbody>
+              </table>-->
+            </form>
+            </div>
+
+</section>
+
+
+

@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<section class="mbr-section mbr-section--relative mbr-section--fixed-size" id="features1-9" style="background-color: rgb(193, 193, 193); height: -webkit-fill-available;">
+  <br><br><br><br><br><br><br>
+  <div class="container">
+      <h2>
+      LOGIN
+    </h2>
+    <form [formGroup]="LogInForm" (ngSubmit)="LogIn(LogInForm.value)">
+       <div class="form-group">
+              <label>MAIL:</label>  
+              <input type="text" #refName class="form-control" name="mail" placeholder="mail"  formControlName="mail">
+              <!--<b>{{refName.className}}</b>-->
+              <!--<div *ngIf="LogInForm.controls['mail'].hasError('required') &&  LogInForm.controls['mail'].touched" class="alert alert-danger" style="padding: 8px;">            
+                  Please enter a email             
+              </div>-->
+               <div *ngIf="LogInForm.controls['mail'].hasError('pattern')" class="alert">            
+                  Please enter a valid email!           
+              </div>
+              <div *ngIf="LogInForm.controls['mail'].hasError('required') && LogInForm.controls['mail'].touched" class="alert">            
+                  Please enter a email!           
+              </div>
+      </div>
+      <div class="form-group">
+              <label>PASSWORD:</label>
+              <input type="password" class="form-control" name="userPassword" placeholder="userPassword"  formControlName="userPassword">
+      </div>
+       <div class="form-group" style="margin-left: 12em">
+              <input type="submit" [disabled]="!LogInForm.valid" value="Login" style="margin-bottom: 10px">
+              <a routerLink="/register" class="btn btn-link">Register</a>
+        </div>
+
+      <!--<table class="table table-primary">
+        <tbody>
+          <tr>
+            <td>
+              <label>MAIL:</label>
+            </td>
+            <td align="center">
+              <input type="text" name="mail" placeholder="mail"  formControlName="mail">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label>PASSWORD:</label>
+            </td>
+            <td align="center">
+              <input type="password" name="userPassword" placeholder="userPassword"  formControlName="userPassword">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <input type="submit" value="LogIn">
+            </td>
+            <td align="center">
+              <a routerLink="/register" class="btn btn-link">Register</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>-->
+    </form>
+    </div>
+  <!--</div>-->
+
+
+</section>
+
+
+
+
+

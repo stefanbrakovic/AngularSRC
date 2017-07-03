@@ -1,0 +1,19 @@
+<p>
+  user-types works!
+</p>
+
+<form class="container" [formGroup]="userTypesForm" (ngSubmit)="createNewUserType(userTypesForm.value)">
+
+  <input type="text" name="typeName" placeholder="typeName"  formControlName="typeName">
+  <br>
+  <input type="text" name="typeDescription" placeholder="typeDescription"  formControlName="typeDescription">
+  <br>
+
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+<button (click)="getAllUserTypes()">Test get all user types</button><br>
+<ul *ngFor="let userType of userTypes">
+  <li>{{userType.userTypeId}} , {{userType.typeName}}, {{userType.typeDescription}}</li>
+</ul>
